@@ -63,6 +63,7 @@
 	    <?php
 		    if($session){
 		        $_SESSION['fb_token'] = (string) $session->getAccessToken();
+			    var_dump($_SESSION['fb_token']);
 		    } else {
 			    $loginUrl = $helper->getLoginUrl();
 			    echo "<a href=" . $loginUrl . ">Connect with Facebook</a>";
