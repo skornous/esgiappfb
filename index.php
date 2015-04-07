@@ -51,7 +51,7 @@
         data-width="450"
         data-show-faces="true">
     </div>
-
+	<br />
 	<a href="<?php echo $loginUrl;?>">Connect with Facebook</a>
 </body>
 </html>
