@@ -14,6 +14,8 @@
 
     FacebookSession::setDefaultApplication(APPID, APPSECRET);
 
+	$helper = new FacebookRedirectLoginHelper("https://esgiappfb.herokuapp.com/");
+
 	// If var session exists && $_SESSION['fb_token'] exists -> create user from fb session
 	if (isset($_SESSION) && isset($_SESSION['fb_token'])) {
 		$session = new FacebookSession($_SESSION['fb_token']);
@@ -62,12 +64,10 @@
 		    if($session){
 		        $_SESSION['fb_token'] = (string) $session->getAccessToken();
 		    } else {
-			    $helper = new FacebookRedirectLoginHelper("https://esgiappfb.herokuapp.com/");
 			    $loginUrl = $helper->getLoginUrl();
 			    echo "<a href=" . $loginUrl . ">Connect with Facebook</a>";
 		    }
 	    ?>
     </pre>
 </body>
-
 </html>
