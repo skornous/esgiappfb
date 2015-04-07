@@ -1,6 +1,23 @@
 <?php
+	error_reporting(E_ALL);
+	ini_set("display_error", 1);
+
+	session_start();
+
+	require("facebook-php-sdk-v4-4.0-dev/autoload.php");
+
+	use Facebook\FacebookSession;
+	use Facebook\FacebookRedirectLoginHelper;
+
     const APPID = "961825047190931";
     const APPSECRET = "56ba2d0b4948bcee61fc3d9c00ce6525";
+
+    FacebookSession::setDefaultApplication(APPID, APPSECRET);
+
+	$helper = new FacebookRedirectLoginHelper("https://esgiappfb.herokuapp.com/");
+	$loginUrl = $helper->getLoginUrl();
+	echo $loginUrl;
+
 ?>
 
 <!DOCTYPE html>
