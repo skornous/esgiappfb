@@ -8,6 +8,8 @@
 
 	use Facebook\FacebookSession;
 	use Facebook\FacebookRedirectLoginHelper;
+	use Facebook\FacebookRequest;
+	use Facebook\GraphUser;
 
     const APPID = "961825047190931";
     const APPSECRET = "56ba2d0b4948bcee61fc3d9c00ce6525";
@@ -63,7 +65,13 @@
 	    <?php
 		    if($session){
 		        $_SESSION['fb_token'] = (string) $session->getAccessToken();
-			    var_dump($_SESSION['fb_token']);
+
+			    // N.B. : The 3 next statements can be executed on one line instead of 3
+			    $request_user = new FacebookRequest($session, "GET", "/me");
+			    $request_user_execute = $request_user->execute();
+			    $user = $request_user_execute->getGraphObject(GraphUser::className());
+
+			    var_dump($user);
 		    } else {
 			    $loginUrl = $helper->getLoginUrl();
 			    echo "<a href=" . $loginUrl . ">Connect with Facebook</a>";
