@@ -16,7 +16,6 @@
 
 	$helper = new FacebookRedirectLoginHelper("https://esgiappfb.herokuapp.com/");
 	$loginUrl = $helper->getLoginUrl();
-	echo $loginUrl;
 
 ?>
 
@@ -52,5 +51,7 @@
         data-width="450"
         data-show-faces="true">
     </div>
+
+	<a href="<?php echo $loginUrl;?>">Connect with Facebook</a>
 </body>
 </html>
