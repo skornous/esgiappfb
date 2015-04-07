@@ -25,6 +25,10 @@
 
 <!DOCTYPE html>
 <html>
+<head>
+	<meta charset="utf-8">
+	<title>Page d'accueil</title>
+</head>
 <body>
 <script>
 	window.fbAsyncInit = function() {
@@ -65,8 +69,5 @@
 	    ?>
     </pre>
 </body>
-<head>
-	<meta charset="utf-8">
-	<title>Page d'accueil</title>
-</head>
+
 </html>
