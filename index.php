@@ -74,6 +74,7 @@
 			    // for a user's photos : /me/photos/uploaded and then getGraphObject(...)->AsArray()
 
 			    echo "Bonjour " . $user->getName();
+			    var_dump($user);
 
 		    } else {
 			    $loginUrl = $helper->getLoginUrl();
